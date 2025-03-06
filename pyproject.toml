@@ -1,0 +1,10 @@
+[project]
+name = "docscraft"
+version = "0.1.0"
+description = "A braindump of pydantic models for us to document"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.10.6",
+    "sphinx",
+]
