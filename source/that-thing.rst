@@ -15,6 +15,10 @@ Imagining an input something like:
 
     .. autopydantic:: main.Docscraft
 
+       This file describes how Docscraft will build your documentation.
+       Because I've provided some text here, we don't use the docstring
+       of the base model, instead using this!
+
 This should result in a page that looks something like the below:
 
 Output
@@ -24,9 +28,9 @@ Output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This file describes how Docscraft will build your documentation.
-Because this model is the top level for the file, this docstring will only show up
-in :doc:`the documentation <index>`, ~~not in the JSON schema~~.
-You can use any rst or Sphinx directives you want! Yay!
+Because I've provided some text here, we don't use the docstring of the
+base model, instead using this!
+
 
 ``name``
 ^^^^^^^^

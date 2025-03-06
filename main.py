@@ -44,12 +44,11 @@ class DocType(enum.Enum):
 
 
 class Docscraft(pydantic.BaseModel):
-    """``docscraft.yaml``
+    """docscraft.yaml
 
     This file describes how Docscraft will build your documentation.
-    Because this model is the top level for the file, this docstring will only show up
-    in :doc:`the documentation <index>`, ~~not in the JSON schema~~.
-    You can use any rst or Sphinx directives you want! Yay!
+    We have to be careful with this docstring because it gets used in the schema but
+    could also be used in the docs themselves.
     """
 
     name: Name
