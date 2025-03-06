@@ -39,6 +39,22 @@ The name of this docscraft project.
 
 This text shows up on the documentation page.
 
+Examples
+........
+
+.. code-block:: yaml
+
+   name: snapcraft
+
+.. code-block:: yaml
+
+   name: charmcraft
+
+.. code-block:: yaml
+
+   name: rockcraft
+
+
 ``type``
 ^^^^^^^^
 
