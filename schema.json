@@ -1,0 +1,37 @@
+{
+  "$defs": {
+    "DocType": {
+      "description": "The type of documentation in this project.",
+      "enum": [
+        "end-user",
+        "developer",
+        "documenter"
+      ],
+      "title": "DocType",
+      "type": "string"
+    }
+  },
+  "description": "``docscraft.yaml``\n\nThis file describes how Docscraft will build your documentation.\nBecause this model is the top level for the file, this docstring will only show up\nin :doc:`the documentation <index>`, ~~not in the JSON schema~~.\nYou can use any rst or Sphinx directives you want! Yay!",
+  "properties": {
+    "name": {
+      "description": "A name for this docscraft project. (This text shows up in the JSON schema)",
+      "examples": [
+        "snapcraft",
+        "charmcraft",
+        "rockcraft"
+      ],
+      "maxLength": 79,
+      "title": "Project name",
+      "type": "string"
+    },
+    "type": {
+      "$ref": "#/$defs/DocType"
+    }
+  },
+  "required": [
+    "name",
+    "type"
+  ],
+  "title": "Docscraft",
+  "type": "object"
+}

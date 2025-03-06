@@ -15,6 +15,5 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
-
-.. autoclass:: main.DocType
-   :members:
+   autodoc
+   that-thing

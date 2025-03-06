@@ -1,6 +1,7 @@
 """Example pydantic models."""
 
 import enum
+import json
 from typing import Annotated
 import pydantic
 
@@ -36,7 +37,8 @@ class DocType(enum.Enum):
     This is documentation aimed at someone who wants to work on the documentation for
     a product. It should contain things like how to set up a documentation environment,
     a style guide, etc. Examples include:
-    - https://docs.ubuntu.com/styleguide/en/
+
+    - `The Ubuntu style guide <https://docs.ubuntu.com/styleguide/en/>`_
     - https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/
     """
 
@@ -45,9 +47,9 @@ class Docscraft(pydantic.BaseModel):
     """``docscraft.yaml``
 
     This file describes how Docscraft will build your documentation.
-    Because it's the top level for the file, this docstring will only show up in the
-    documentation, not in the JSON schema. Because of that, you can use any rst or
-    Sphinx directives you want! Yay!
+    Because this model is the top level for the file, this docstring will only show up
+    in :doc:`the documentation <index>`, ~~not in the JSON schema~~.
+    You can use any rst or Sphinx directives you want! Yay!
     """
 
     name: Name
@@ -57,3 +59,7 @@ class Docscraft(pydantic.BaseModel):
     """
 
     type: DocType
+
+
+with open("schema.json", "w+") as f:
+    print(json.dumps(Docscraft.model_json_schema(), indent=2), file=f)
