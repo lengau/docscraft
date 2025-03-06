@@ -14,7 +14,7 @@ Name = Annotated[
     )
 ]
 
-class DocType(enum.StrEnum):
+class DocType(enum.Enum):
     """The type of documentation in this project."""
 
     END_USER = "end-user"

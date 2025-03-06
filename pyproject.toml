@@ -7,4 +7,5 @@ requires-python = ">=3.10"
 dependencies = [
     "pydantic>=2.10.6",
     "sphinx",
+    "sphinx-autobuild>=2024.10.3",
 ]
