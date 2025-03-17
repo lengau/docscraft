@@ -2,7 +2,8 @@
 
 import enum
 import json
-from typing import Annotated
+import pathlib
+from typing import Annotated, Literal
 import pydantic
 
 Name = Annotated[
@@ -43,6 +44,20 @@ class DocType(enum.Enum):
     """
 
 
+class DocBuild(pydantic.BaseModel):
+    """A single documentation build option."""
+
+    path: pathlib.Path
+    """The relative path to the documentation directory from docscraft.yaml."""
+    build_command: list[str]
+
+
+class Part(pydantic.BaseModel):
+
+    plugin: str
+    source: str
+
+
 class Docscraft(pydantic.BaseModel):
     """docscraft.yaml
 
@@ -58,6 +73,16 @@ class Docscraft(pydantic.BaseModel):
     """
 
     type: DocType
+
+    build: DocBuild
+    """The build information for this build."""
+
+    parts: dict[str, Part] = pydantic.Field(
+        description="Mapping of part names to their information.",
+        examples=[
+            {"my-part": {"plugin: nil"}},
+        ]
+    )
 
 
 with open("schema.json", "w+") as f:
